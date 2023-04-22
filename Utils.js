@@ -39,13 +39,6 @@ export const clone = (val)=> {
 }
 
 /**
- * Check if property exists on an object
- */
-export const hasProperty = (obj)=> {
-
-}
-
-/**
  * Delay execution of a function until it has not been called for a certain period
  */
 export const debounce = (func, delay = 300)=> {
