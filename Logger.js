@@ -1,21 +1,11 @@
-﻿const DEBUG_ENABLED = true
+﻿import { noop } from './Utils'
 
-const logger = {
-    log: (...args) => {
-        if(DEBUG_ENABLED) console.log(...args)
-    },
-    warn: (...args) => {
-        if(DEBUG_ENABLED) console.warn(...args)
-    },
-    error: (...args) => {
-        if(DEBUG_ENABLED) console.error(...args)
-    },
-    info: (...args) => {
-        if(DEBUG_ENABLED) console.info(...args)
-    },
-    trace: (...args) => {
-        if(DEBUG_ENABLED) console.trace(...args)
-    }
+export let log = noop
+export let warn = noop
+export let error = noop
+
+if(DEBUG_ENABLED){
+    log = (...args)=> console.log(...args)
+    warn = (...args)=> console.warn(...args)
+    error = (...args)=> console.error(...args)
 }
-
-export default logger
